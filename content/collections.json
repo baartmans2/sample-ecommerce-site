@@ -1,0 +1,315 @@
+[
+  {
+    "collection_name": "Zero Money Team",
+    "collection_url": "zeromoneyteam",
+    "image": "zmt-classic-tee-white.png",
+    "products": [
+      {
+        "id": 1,
+        "product_name": "Zero Money Team Classic Tee",
+        "variants": [
+          {
+            "variant_id": 1,
+            "name": "White",
+            "image": "zmt-classic-tee-white.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDETkFphlPzH0ms6YvYDsH3"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDw8RFphlPzH0msiLgHxfH6"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDw8dFphlPzH0msq6MLWMRf"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDw8nFphlPzH0ms7JZHQIP9"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDw8xFphlPzH0msUFcvyZYt"
+              }
+            ]
+          },
+          {
+            "variant_id": 2,
+            "name": "Black",
+            "image": "zmt-classic-tee-black.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDEU6FphlPzH0msHcONQOsn"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDw9NFphlPzH0msSKNjF6fp"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDw9tFphlPzH0msVOS2EbJd"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDwAMFphlPzH0msoDW1xE9l"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDwAgFphlPzH0msUYFgvzHc"
+              }
+            ]
+          }
+        ],
+        "image": "zmt-classic-tee-white.png",
+        "price": 19.99
+      }
+    ]
+  },
+  {
+    "collection_name": "I'm Peter",
+    "collection_url": "peter",
+    "image": "petertee-black.png",
+    "products": [
+      {
+        "id": 1,
+        "product_name": "Peter Tee",
+        "variants": [
+          {
+            "variant_id": 1,
+            "name": "White",
+            "image": "petertee-white.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDETCFphlPzH0mssyLHdxru"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDw5MFphlPzH0msUJ9lLQUR"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDw5iFphlPzH0msLa9FMX6J"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDw5zFphlPzH0msHcTnAcGr"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDw6NFphlPzH0msHLpMug2B"
+              }
+            ]
+          },
+          {
+            "variant_id": 2,
+            "name": "Tan",
+            "image": "petertee-tan.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDEkpFphlPzH0msy68Q1Tr1"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDw3vFphlPzH0ms2iXZ3zv1"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDw3vFphlPzH0ms2iXZ3zv1"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDw4WFphlPzH0msx7MOwxkU"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDw4nFphlPzH0msVRPAzUAY"
+              }
+            ]
+          },
+          {
+            "variant_id": 3,
+            "name": "Black",
+            "image": "petertee-black.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDETQFphlPzH0msPe7j6hrh"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDw6xFphlPzH0msquxXpAcu"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDw7HFphlPzH0msACp2PlIB"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDw7WFphlPzH0msIBHMwmlO"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDw7qFphlPzH0mskEcO0Svq"
+              }
+            ]
+          }
+        ],
+        "image": "petertee-white.png",
+        "price": 19.99
+      },
+      {
+        "id": 2,
+        "product_name": "Peter Metal Tee",
+        "variants": [
+          {
+            "variant_id": 1,
+            "name": "White",
+            "image": "peter-metal-tee-white.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDEk6FphlPzH0msBWtgfG5L"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDwEkFphlPzH0msVK6jhx67"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDwEzFphlPzH0msQ6aiXDHC"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDwFIFphlPzH0msRW3FVCLv"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDwFjFphlPzH0msN39gZNAe"
+              }
+            ]
+          },
+          {
+            "variant_id": 2,
+            "name": "Red",
+            "image": "peter-metal-tee-red.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDEkVFphlPzH0mssWysSoAO"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDwGLFphlPzH0msYGKOcnWd"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDwGfFphlPzH0msFNKvgi24"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDwGwFphlPzH0msCu4XuPSn"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDwHCFphlPzH0msC4OZlXse"
+              }
+            ]
+          }
+        ],
+        "image": "peter-metal-tee-white.png",
+        "price": 19.99
+      },
+      {
+        "id": 3,
+        "product_name": "Petersace Tee",
+        "variants": [
+          {
+            "variant_id": 1,
+            "name": "White",
+            "image": "petersace-tee.png",
+            "secondary_image": "",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDEUtFphlPzH0ms72kpwkq1"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDwBiFphlPzH0ms5mPFc5nz"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDwBzFphlPzH0msVxRe2jLS"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDwCHFphlPzH0msA6UYGUGj"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDwCYFphlPzH0msM7dg0H24"
+              }
+            ]
+          }
+        ],
+        "image": "petersace-tee.png",
+        "price": 19.99
+      }
+    ]
+  },
+  {
+    "collection_name": "Drypto",
+    "collection_url": "Drypto",
+    "image": "missing-nft-front.png",
+    "products": [
+      {
+        "id": 1,
+        "product_name": "Missing NFT Tee",
+        "variants": [
+          {
+            "variant_id": 1,
+            "name": "White",
+            "image": "missing-nft-front.png",
+            "secondary_image": "missing-nft-back.png",
+            "sizes": [
+              {
+                "size": "S",
+                "stripe_price_id": "price_1LDEUQFphlPzH0ms8NYGTD0e"
+              },
+              {
+                "size": "M",
+                "stripe_price_id": "price_1LDwDEFphlPzH0msOzWnfZzc"
+              },
+              {
+                "size": "L",
+                "stripe_price_id": "price_1LDwDSFphlPzH0mssVQ3Um4K"
+              },
+              {
+                "size": "XL",
+                "stripe_price_id": "price_1LDwDmFphlPzH0ms0Yj6cCUF"
+              },
+              {
+                "size": "XXL",
+                "stripe_price_id": "price_1LDwE2FphlPzH0msU5QlsDOA"
+              }
+            ]
+          }
+        ],
+        "image": "missing-nft-front.png",
+        "price": 24.99
+      }
+    ]
+  }
+]
