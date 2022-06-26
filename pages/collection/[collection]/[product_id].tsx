@@ -4,13 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
-import {
-  Product,
-  Size,
-  ShirtVariant,
-  CartProduct,
-  Cart,
-} from '../../../utils/types';
+import { Product, ShirtVariant, Cart } from '../../../utils/types';
 import { GetServerSideProps } from 'next';
 import { FetchProductResult } from '../../../utils/types';
 import { fetchProduct } from '../../../utils/products';

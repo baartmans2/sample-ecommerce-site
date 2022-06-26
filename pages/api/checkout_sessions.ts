@@ -7,6 +7,13 @@ interface LineItem {
   quantity: number;
 }
 
+const env = process.env.NODE_ENV;
+
+const STRIPE_SECRET_KEY =
+  env == 'development'
+    ? process.env.STRIPE_SECRET_TEST_KEY!
+    : process.env.STRIPE_SECRET_KEY!;
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -28,7 +35,7 @@ export default async function handler(
       });
     });
 
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    const stripe = new Stripe(STRIPE_SECRET_KEY, {
       apiVersion: '2020-08-27',
     });
     try {

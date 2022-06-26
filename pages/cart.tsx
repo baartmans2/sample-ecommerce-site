@@ -1,10 +1,8 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Page.module.css';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
-import { Cart, CartProduct } from '../utils/types';
+import { Cart } from '../utils/types';
 import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 

@@ -1,8 +1,5 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Page.module.css';
-import Link from 'next/link';
 
 const Contact: NextPage = () => {
   return (

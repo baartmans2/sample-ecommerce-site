@@ -17,7 +17,15 @@ export const config = {
 
 const env = process.env.NODE_ENV;
 
-const endpointSecret = process.env.STRIPE_ENDPOINT_SECRET!;
+const STRIPE_SECRET_KEY =
+  env == 'development'
+    ? process.env.STRIPE_SECRET_TEST_KEY!
+    : process.env.STRIPE_SECRET_KEY!;
+
+const STRIPE_ENDPOINT_SECRET =
+  env == 'development'
+    ? process.env.STRIPE_ENDPOINT_TEST_SECRET!
+    : process.env.STRIPE_ENDPOINT_TEST_SECRET!;
 
 export default async function handler(
   req: NextApiRequest,
@@ -25,7 +33,7 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     try {
-      const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+      const stripe = new Stripe(STRIPE_SECRET_KEY, {
         apiVersion: '2020-08-27',
       });
       const payload = await buffer(req);
@@ -35,7 +43,7 @@ export default async function handler(
       event = stripe.webhooks.constructEvent(
         payload,
         sig || '',
-        endpointSecret
+        STRIPE_ENDPOINT_SECRET
       );
 
       switch (event.type) {
