@@ -26,9 +26,15 @@ export interface PrintfulOrderItem {
   quantity: number | null;
 }
 
+export interface PackingSlip {
+  email: string;
+  custom_order_id: string;
+}
+
 export interface PrintfulOrderRequest {
   recipient: Address;
   items: PrintfulOrderItem[];
+  packing_slip: PackingSlip;
 }
 
 export interface ShirtSize {

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { Cart, CartCookieItem, CartProduct } from '../utils/types';
 import React, { useState, useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
 import Head from 'next/head';
 
 const Cart: NextPage = () => {
@@ -27,24 +26,6 @@ const Cart: NextPage = () => {
         setExpandedCart(expandedCart);
         setIsLoading(false);
       });
-
-    /* const fetchCart = async () => {
-      const res = await fetch('/api/getCartDetails', {
-        body: JSON.stringify({ items: cart }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      });
-      const body = await res.json();
-      const theCart: Cart = body.cart;
-      console.log(theCart.products);
-      setExpandedCart(theCart);
-    };
-
-    const result = fetchCart().catch(console.error);
-    setIsLoading(false);
-    console.log(expandedCart); */
   });
 
   function removeFromCart(productIndex: number) {

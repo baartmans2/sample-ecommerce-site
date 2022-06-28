@@ -87,6 +87,10 @@ export default async function handler(
           const order: PrintfulOrderRequest = {
             recipient: recipient,
             items: items,
+            packing_slip: {
+              email: 'mail@zeromoneyteam.com',
+              custom_order_id: session.id,
+            },
           };
 
           const orderRes = await fetch('https://api.printful.com/orders', {
@@ -107,62 +111,61 @@ export default async function handler(
               //order created successfully
 
               //confirm order for fufillment
-              if (env == 'production') {
-                const orderFufill = await fetch(
-                  `https://api.printful.com/orders/${printfulOrderRes.result.id}/confirm`,
-                  {
-                    headers: {
-                      'Content-Type': 'application/json',
-                      Authorization: `Basic ${Buffer.from(
-                        process.env.PRINTFUL_ALT_API_KEY!
-                      ).toString('base64')}`,
-                    },
-                    method: 'POST',
-                  }
-                );
+              const orderFufill = await fetch(
+                `https://api.printful.com/orders/${printfulOrderRes.result.id}/confirm`,
+                {
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Basic ${Buffer.from(
+                      process.env.PRINTFUL_ALT_API_KEY!
+                    ).toString('base64')}`,
+                  },
+                  method: 'POST',
+                }
+              );
 
-                const orderFufillRes = await orderFufill.json();
-                switch (orderFufillRes.code) {
-                  case 200: {
-                    break;
-                  }
-                  default: {
-                    //order not confirmed
+              const orderFufillRes = await orderFufill.json();
+              switch (orderFufillRes.code) {
+                case 200: {
+                  console.log(orderFufillRes);
+                  //send a mail to user that order has been successfully processed
+                  //send mail to user
+                  console.log('order confirmed for fufillment.');
+                  /* await sendMail(
+                    recipient.email,
+                    'Your Order Has Been Processed',
+                    `Your order has been successfully processed. You should receive another confirmation email from the manufacturer shortly. Tracking URL: ${orderFufillRes.result.shipments.tracking_url}`
+                  ); */
+                  break;
+                }
+                default: {
+                  //order not confirmed
+                  console.log('Error confirming order.');
+                  //refund order
+                  const refund = await stripe.refunds.create({
+                    payment_intent: session.payment_intent,
+                  });
 
-                    //refund order
-                    const refund = await stripe.refunds.create({
-                      payment_intent: session.payment_intent,
-                    });
+                  //send mail to user
+                  await sendMail(
+                    recipient.email,
+                    'Error Processing Your Order',
+                    'There was an unexpected error processing your order. Your order has been canceled and a refund has been issued. Please contact mail@zeromoneyteam.com if you have any further issues.'
+                  );
 
-                    //send mail to user
-                    await sendMail(
-                      recipient.email,
-                      'Error Processing Your Order',
-                      'There was an unexpected error processing your order. A refund has been issued to your account. Please try again.'
-                    );
-
-                    //order not created successfully
-                    res
-                      .status(400)
-                      .json('Failed to create order. Refund Issued.');
-                  }
+                  //order not created successfully
+                  res
+                    .status(400)
+                    .json('Failed to confirm order. Refund Issued.');
                 }
               }
-
-              //send a mail to user that order has been successfully processed
-              //send mail to user
-              await sendMail(
-                recipient.email,
-                'Your Order Has Been Processed',
-                'Your order has been successfully processed. You should receive another confirmation email from the manufacturer shortly.'
-              );
 
               res.status(200).json('Order created successfully.');
               break;
             }
             default: {
               //order not created successfully
-
+              console.log('Error creating order.');
               //refund order
               const refund = await stripe.refunds.create({
                 payment_intent: session.payment_intent,
@@ -171,7 +174,7 @@ export default async function handler(
               await sendMail(
                 recipient.email,
                 'Error Processing Your Order',
-                'There was an unexpected error processing your order. A refund has been issued to your account. Please try again.'
+                'There was an unexpected error processing your order. Your order has been canceled and a refund has been issued. Please contact mail@zeromoneyteam.com if you have any further issues.'
               );
 
               res.status(400).json('Failed to create order. Refund Issued.');
