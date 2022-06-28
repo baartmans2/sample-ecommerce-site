@@ -6,20 +6,20 @@ export async function sendMail(
   message: string
 ) {
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    host: 'outlook.office365.com',
+    port: 587,
+    secure: false,
     auth: {
-      user: 'zeromoneyteam@gmail.com',
+      user: 'mail@zeromoneyteam.com',
       pass: process.env.MAIL_PASSWORD!,
     },
     tls: {
-      rejectUnauthorized: false,
+      ciphers: 'SSLv3',
     },
   });
 
   const mail = await transporter.sendMail({
-    from: '"ZeroMoneyTeam" <zeromoneyteam@gmail.com>',
+    from: '"ZeroMoneyTeam" <mail@zeromoneyteam.com>',
     to: recipient,
     subject: subject,
     text: message,

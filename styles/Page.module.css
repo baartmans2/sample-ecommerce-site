@@ -59,6 +59,13 @@
 }
 
 .textContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textContainer p {
     max-width: 500px;
 }
 

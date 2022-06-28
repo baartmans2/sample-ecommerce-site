@@ -1,12 +1,16 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Page.module.css';
 import Link from 'next/link';
+import Head from 'next/head';
 import collections from '../content/collections.json';
 import Cart from '../components/cart';
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Zero Money Team</title>
+      </Head>
       <Cart />
       <div className={styles.container}>
         <h1>Collections</h1>

@@ -1,19 +1,16 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import { Cart } from '../utils/types';
+import { CartCookieItem } from '../utils/types';
 
 const Cart = () => {
   const [itemsInCart, setItemsInCart] = useState<number>(1);
 
   useEffect(() => {
-    const cart: Cart = JSON.parse(
-      Cookies.get('cart') ||
-        JSON.stringify({
-          products: [],
-        })
+    const cart: CartCookieItem[] = JSON.parse(
+      Cookies.get('cart') || JSON.stringify([])
     );
-    setItemsInCart(cart.products.length);
+    setItemsInCart(cart.length);
   });
 
   if (itemsInCart > 0) {

@@ -28,7 +28,6 @@ export default async function handler(
     var lineItems: LineItem[] = [];
 
     cart.products.forEach((product) => {
-      console.log(product.product_name);
       lineItems.push({
         price: product.stripe_price_id,
         quantity: product.quantity,
@@ -39,7 +38,6 @@ export default async function handler(
       apiVersion: '2020-08-27',
     });
     try {
-      console.log('creating checkout session...');
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create({
         line_items: lineItems,

@@ -4,7 +4,12 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
-import { Product, ShirtVariant, Cart } from '../../../utils/types';
+import {
+  Product,
+  ShirtVariant,
+  Cart,
+  CartCookieItem,
+} from '../../../utils/types';
 import { GetServerSideProps } from 'next';
 import { FetchProductResult } from '../../../utils/types';
 import { fetchProduct } from '../../../utils/products';
@@ -13,6 +18,7 @@ import Cookies from 'js-cookie';
 import CartPanel from '../../../components/cart';
 import Router from 'next/router';
 import Link from 'next/link';
+import Head from 'next/head';
 
 interface Props {
   collection_url: string;
@@ -23,20 +29,27 @@ const ProductPage: NextPage<Props> = (props) => {
   const [activeVariant, setActiveVariant] = useState<ShirtVariant>(
     props.product.variants[0]
   );
-  const [size, setSize] = useState<string | undefined>(undefined);
+  const [size, setSize] = useState<string>('');
   const [quantity, setQuantity] = useState<number>(1);
   const [priceID, setPriceID] = useState('');
+  const [cart, setCart] = useState<CartCookieItem[]>(
+    JSON.parse(Cookies.get('cart') || JSON.stringify([]))
+  );
+  const [loading, setLoading] = useState<boolean>(false);
 
   function handleVariantChange(event: SelectChangeEvent<string>) {
-    props.product.variants.forEach((variant) => {
-      if (variant.name === event.target.value) {
+    setLoading(true);
+    for (const variant of props.product.variants) {
+      if (variant.name == event.target.value) {
         setActiveVariant(variant);
-        return;
+        setSize('');
       }
-    });
+    }
+    setLoading(false);
   }
 
   function handleSizeChange(event: SelectChangeEvent<string>) {
+    setLoading(true);
     setSize(event.target.value);
     activeVariant.sizes.forEach((shirtSize) => {
       if (shirtSize.size === event.target.value) {
@@ -44,45 +57,42 @@ const ProductPage: NextPage<Props> = (props) => {
         return;
       }
     });
+    setLoading(false);
   }
 
   function handleQuantityChange(
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
+    setLoading(true);
     if (
       parseInt(event.target.value) >= 1 &&
       parseInt(event.target.value) < 11
     ) {
       setQuantity(parseInt(event.target.value));
     }
+    setLoading(false);
   }
 
   function handleFormSubmit(event: React.FormEvent<HTMLButtonElement>) {
+    setLoading(true);
+    console.log(cart);
     if (size === undefined) {
     } else {
-      const cart: Cart = JSON.parse(
-        Cookies.get('cart') ||
-          JSON.stringify({
-            products: [],
-          })
-      );
-      cart.products.push({
-        id: props.product.id,
-        product_name: props.product.product_name,
-        variant: activeVariant,
-        image: activeVariant.image,
+      cart.push({
+        price_id: priceID,
         quantity: quantity,
-        price: props.product.price,
-        size: size,
-        stripe_price_id: priceID,
       });
       Cookies.set('cart', JSON.stringify(cart));
     }
+    setLoading(false);
     Router.push('/cart');
   }
 
   return (
     <>
+      <Head>
+        <title>{props.product.product_name + ' | Zero Money Team'}</title>
+      </Head>
       <CartPanel />
       <div className={styles.container}>
         <h1>{props.product.product_name}</h1>
@@ -96,7 +106,11 @@ const ProductPage: NextPage<Props> = (props) => {
         <div className={styles.productForm}>
           <div className={styles.productFormItem}>
             <InputLabel>Variant</InputLabel>
-            <Select onChange={handleVariantChange} value={activeVariant.name}>
+            <Select
+              disabled={loading}
+              onChange={handleVariantChange}
+              value={activeVariant.name}
+            >
               {props.product.variants.map((variant, index) => (
                 <MenuItem key={index} value={variant.name}>
                   {variant.name}
@@ -106,7 +120,7 @@ const ProductPage: NextPage<Props> = (props) => {
           </div>
           <div className={styles.productFormItem}>
             <InputLabel>Size</InputLabel>
-            <Select onChange={handleSizeChange} value={size}>
+            <Select disabled={loading} onChange={handleSizeChange} value={size}>
               {activeVariant.sizes.map((shirtSize, index) => (
                 <MenuItem key={index} value={shirtSize.size}>
                   {shirtSize.size}
@@ -117,6 +131,7 @@ const ProductPage: NextPage<Props> = (props) => {
           <div className={styles.productFormItem}>
             <InputLabel>Quantity</InputLabel>
             <TextField
+              disabled={loading}
               onChange={handleQuantityChange}
               type='number'
               variant='outlined'
@@ -125,9 +140,22 @@ const ProductPage: NextPage<Props> = (props) => {
           </div>
         </div>
         <h2>{'$' + props.product.price}</h2>
-        <button onClick={handleFormSubmit} disabled={size === undefined}>
+        <button
+          onClick={handleFormSubmit}
+          disabled={size === '' || loading || cart.length >= 10}
+        >
           Add To Cart
         </button>
+        {cart.length >= 10 && (
+          <>
+            {' '}
+            <h3>
+              You have reached the maximum amount of items that can be stored in
+              your cart.
+            </h3>
+            <Link href='/cart'>View Cart</Link>
+          </>
+        )}
       </div>
     </>
   );

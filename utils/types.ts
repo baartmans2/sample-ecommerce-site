@@ -75,6 +75,11 @@ export interface Cart {
   products: CartProduct[];
 }
 
+export interface CartCookieItem {
+  price_id: string;
+  quantity: number;
+}
+
 export interface Collection {
   collection_name: string;
   collection_url: string;

@@ -5,6 +5,7 @@ import { fetchCollection } from '../../utils/products';
 import styles from '../../styles/Page.module.css';
 import Link from 'next/link';
 import Cart from '../../components/cart';
+import Head from 'next/head';
 
 interface Props {
   collection: Collection;
@@ -13,6 +14,9 @@ interface Props {
 const CollectionPage: NextPage<Props> = (props) => {
   return (
     <>
+      <Head>
+        <title>{props.collection.collection_name + ' | Zero Money Team'}</title>
+      </Head>
       <div className={styles.container}>
         <Cart />
         <h1>{props.collection.collection_name}</h1>
