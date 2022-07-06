@@ -38,7 +38,6 @@ export default async function handler(
       });
       const payload = await buffer(req);
       const sig = req.headers['stripe-signature'];
-
       let event: Stripe.Event;
       event = stripe.webhooks.constructEvent(
         payload,
@@ -141,7 +140,7 @@ export default async function handler(
                 }
                 default: {
                   //order not confirmed
-                  console.log('Error confirming order.');
+                  console.log('Error confirming order: ' + orderFufillRes);
                   //refund order
                   const refund = await stripe.refunds.create({
                     payment_intent: session.payment_intent,
@@ -166,7 +165,7 @@ export default async function handler(
             }
             default: {
               //order not created successfully
-              console.log('Error creating order.');
+              console.log('Error creating order: ' + printfulOrderRes);
               //refund order
               const refund = await stripe.refunds.create({
                 payment_intent: session.payment_intent,
