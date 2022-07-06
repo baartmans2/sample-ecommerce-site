@@ -23,7 +23,7 @@ export default async function handler(
           await sendMail(
             event.data.order.recipient.email,
             'Your Order Has Been Placed',
-            `Your order has been placed. You will receive another email in 5-10 days when your product has shipped, or if there are any unexpected issues regarded your order. Please contact mail@zeromoneyteam.com if you require any further assistance. Order ID: ${event.data.order.packing_slip.custom_order_id}`
+            `Your order has been placed. You will receive another email in 5-10 days when your product has shipped, or if there are any unexpected issues regarded your order. Please contact mail@zeromoneyteam.com if you require any further assistance. Order ID: ${event.data.order.packing_slip.message}`
           );
           break;
         }
@@ -45,7 +45,7 @@ export default async function handler(
 
           try {
             const session: any = await stripe.checkout.sessions.retrieve(
-              event.data.order.packing_slip.custom_order_id
+              event.data.order.packing_slip.message
             );
 
             const refund = await stripe.refunds.create({
@@ -77,7 +77,7 @@ export default async function handler(
             });
 
             const session: any = await stripe.checkout.sessions.retrieve(
-              event.data.order.packing_slip.custom_order_id
+              event.data.order.packing_slip.message
             );
 
             const refund = await stripe.refunds.create({

@@ -89,7 +89,7 @@ export default async function handler(
             items: items,
             packing_slip: {
               email: 'mail@zeromoneyteam.com',
-              custom_order_id: session.id,
+              message: session.id,
             },
           };
 

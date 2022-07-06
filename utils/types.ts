@@ -28,7 +28,7 @@ export interface PrintfulOrderItem {
 
 export interface PackingSlip {
   email: string;
-  custom_order_id: string;
+  message: string;
 }
 
 export interface PrintfulOrderRequest {
