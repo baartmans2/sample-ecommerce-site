@@ -16,7 +16,7 @@ export default async function handler(
   if (req.method === 'POST') {
     try {
       const event = req.body;
-
+      console.log('Printful Event Received');
       switch (event.type) {
         case 'order_created': {
           console.log('created');

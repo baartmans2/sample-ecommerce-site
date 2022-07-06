@@ -48,6 +48,7 @@ export default async function handler(
 
       switch (event.type) {
         case 'checkout.session.completed': {
+          console.log('Event Received');
           const session: any = event.data.object;
 
           const lineItems = await stripe.checkout.sessions.listLineItems(
