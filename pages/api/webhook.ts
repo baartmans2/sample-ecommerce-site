@@ -105,7 +105,8 @@ export default async function handler(
           });
 
           const printfulOrderRes = await orderRes.json();
-
+          console.log('Printful Response:');
+          console.log(JSON.stringify(printfulOrderRes));
           switch (printfulOrderRes.code) {
             case 200: {
               //order created successfully
@@ -140,7 +141,7 @@ export default async function handler(
                 }
                 default: {
                   //order not confirmed
-                  console.log('Error confirming order: ' + orderFufillRes);
+                  console.log('Error confirming order.');
                   //refund order
                   const refund = await stripe.refunds.create({
                     payment_intent: session.payment_intent,
@@ -165,7 +166,7 @@ export default async function handler(
             }
             default: {
               //order not created successfully
-              console.log('Error creating order: ' + printfulOrderRes);
+              console.log('Error creating order.');
               //refund order
               const refund = await stripe.refunds.create({
                 payment_intent: session.payment_intent,
