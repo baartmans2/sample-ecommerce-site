@@ -5,6 +5,11 @@
     min-height: 70vh;
 }
 
+.container p {
+    max-width: 500px;
+    margin: 16px;
+}
+
 .gallery {
     display: grid;
     grid-template-columns: min-content min-content;

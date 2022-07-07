@@ -135,6 +135,12 @@ const ProductPage: NextPage<Props> = (props) => {
           </div>
         </div>
         <h2>{'$' + props.product.price}</h2>
+        <p>
+          Care Instructions: Machine wash cold, inside-out, gentle cycle with
+          mild detergent and similar colors. Use non-chlorine bleach, only when
+          necessary. No fabric softeners. Tumble dry low, or hang-dry for
+          longest life. Do not dry clean.
+        </p>
         <button
           onClick={handleFormSubmit}
           disabled={size === '' || loading || cart.length >= 10}

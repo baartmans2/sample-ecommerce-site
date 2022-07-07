@@ -16,23 +16,23 @@
             "sizes": [
               {
                 "size": "S",
-                "stripe_price_id": "price_1LDETkFphlPzH0ms6YvYDsH3"
+                "stripe_price_id": "price_1LJ0ACFphlPzH0msbD7WH5XZ"
               },
               {
                 "size": "M",
-                "stripe_price_id": "price_1LDw8RFphlPzH0msiLgHxfH6"
+                "stripe_price_id": "price_1LJ0ARFphlPzH0mshI30ePUl"
               },
               {
                 "size": "L",
-                "stripe_price_id": "price_1LDw8dFphlPzH0msq6MLWMRf"
+                "stripe_price_id": "price_1LJ0AVFphlPzH0msoO1AyFnD"
               },
               {
                 "size": "XL",
-                "stripe_price_id": "price_1LDw8nFphlPzH0ms7JZHQIP9"
+                "stripe_price_id": "price_1LJ0AYFphlPzH0msgiRXKvlt"
               },
               {
                 "size": "XXL",
-                "stripe_price_id": "price_1LDw8xFphlPzH0msUFcvyZYt"
+                "stripe_price_id": "price_1LJ0AbFphlPzH0msUHDVkHSW"
               }
             ]
           },
@@ -44,23 +44,23 @@
             "sizes": [
               {
                 "size": "S",
-                "stripe_price_id": "price_1LDEU6FphlPzH0msHcONQOsn"
+                "stripe_price_id": "price_1LJ08VFphlPzH0ms8dYeOsw7"
               },
               {
                 "size": "M",
-                "stripe_price_id": "price_1LDw9NFphlPzH0msSKNjF6fp"
+                "stripe_price_id": "price_1LJ09bFphlPzH0msZ5ReKepc"
               },
               {
                 "size": "L",
-                "stripe_price_id": "price_1LDw9tFphlPzH0msVOS2EbJd"
+                "stripe_price_id": "price_1LJ09hFphlPzH0msvOV0ZlOX"
               },
               {
                 "size": "XL",
-                "stripe_price_id": "price_1LDwAMFphlPzH0msoDW1xE9l"
+                "stripe_price_id": "price_1LJ09sFphlPzH0msk4e0CsYi"
               },
               {
                 "size": "XXL",
-                "stripe_price_id": "price_1LDwAgFphlPzH0msUYFgvzHc"
+                "stripe_price_id": "price_1LJ09wFphlPzH0msAVlXaTq0"
               }
             ]
           }
@@ -87,23 +87,23 @@
             "sizes": [
               {
                 "size": "S",
-                "stripe_price_id": "price_1LDETCFphlPzH0mssyLHdxru"
+                "stripe_price_id": "price_1LJ0B0FphlPzH0ms5L2j8bcE"
               },
               {
                 "size": "M",
-                "stripe_price_id": "price_1LDw5MFphlPzH0msUJ9lLQUR"
+                "stripe_price_id": "price_1LJ0BDFphlPzH0msScUTKdGe"
               },
               {
                 "size": "L",
-                "stripe_price_id": "price_1LDw5iFphlPzH0msLa9FMX6J"
+                "stripe_price_id": "price_1LJ0BHFphlPzH0msHGIbWO81"
               },
               {
                 "size": "XL",
-                "stripe_price_id": "price_1LDw5zFphlPzH0msHcTnAcGr"
+                "stripe_price_id": "price_1LJ0BLFphlPzH0msG7DIUg7a"
               },
               {
                 "size": "XXL",
-                "stripe_price_id": "price_1LDw6NFphlPzH0msHLpMug2B"
+                "stripe_price_id": "price_1LJ0BPFphlPzH0msGCDjO6zG"
               }
             ]
           },
@@ -115,23 +115,23 @@
             "sizes": [
               {
                 "size": "S",
-                "stripe_price_id": "price_1LDEkpFphlPzH0msy68Q1Tr1"
+                "stripe_price_id": "price_1LJ0BeFphlPzH0msewGkQPEG"
               },
               {
                 "size": "M",
-                "stripe_price_id": "price_1LDw3vFphlPzH0ms2iXZ3zv1"
+                "stripe_price_id": "price_1LJ0BkFphlPzH0ms55EukgNk"
               },
               {
                 "size": "L",
-                "stripe_price_id": "price_1LDw4FFphlPzH0ms56Yox04G"
+                "stripe_price_id": "price_1LJ0BoFphlPzH0msENr2EVNM"
               },
               {
                 "size": "XL",
-                "stripe_price_id": "price_1LDw4WFphlPzH0msx7MOwxkU"
+                "stripe_price_id": "price_1LJ0BtFphlPzH0msCdDAuBPb"
               },
               {
                 "size": "XXL",
-                "stripe_price_id": "price_1LDw4nFphlPzH0msVRPAzUAY"
+                "stripe_price_id": "price_1LJ0BwFphlPzH0msQY02slu3"
               }
             ]
           },
@@ -143,92 +143,28 @@
             "sizes": [
               {
                 "size": "S",
-                "stripe_price_id": "price_1LDETQFphlPzH0msPe7j6hrh"
+                "stripe_price_id": "price_1LJ0CKFphlPzH0msxYqqvmVu"
               },
               {
                 "size": "M",
-                "stripe_price_id": "price_1LDw6xFphlPzH0msquxXpAcu"
+                "stripe_price_id": "price_1LJ0CTFphlPzH0mstcBOEZdX"
               },
               {
                 "size": "L",
-                "stripe_price_id": "price_1LDw7HFphlPzH0msACp2PlIB"
+                "stripe_price_id": "price_1LJ0CaFphlPzH0msamfSW7qV"
               },
               {
                 "size": "XL",
-                "stripe_price_id": "price_1LDw7WFphlPzH0msIBHMwmlO"
+                "stripe_price_id": "price_1LJ0CeFphlPzH0msdNKHTJ2e"
               },
               {
                 "size": "XXL",
-                "stripe_price_id": "price_1LDw7qFphlPzH0mskEcO0Svq"
+                "stripe_price_id": "price_1LJ0CiFphlPzH0msC5w4eBzJ"
               }
             ]
           }
         ],
         "image": "petertee-white.png",
-        "price": 19.99
-      },
-      {
-        "id": 2,
-        "product_name": "Peter Metal Tee",
-        "variants": [
-          {
-            "variant_id": 1,
-            "name": "White",
-            "image": "peter-metal-tee-white.png",
-            "secondary_image": "",
-            "sizes": [
-              {
-                "size": "S",
-                "stripe_price_id": "price_1LDEk6FphlPzH0msBWtgfG5L"
-              },
-              {
-                "size": "M",
-                "stripe_price_id": "price_1LDwEkFphlPzH0msVK6jhx67"
-              },
-              {
-                "size": "L",
-                "stripe_price_id": "price_1LDwEzFphlPzH0msQ6aiXDHC"
-              },
-              {
-                "size": "XL",
-                "stripe_price_id": "price_1LDwFIFphlPzH0msRW3FVCLv"
-              },
-              {
-                "size": "XXL",
-                "stripe_price_id": "price_1LDwFjFphlPzH0msN39gZNAe"
-              }
-            ]
-          },
-          {
-            "variant_id": 2,
-            "name": "Red",
-            "image": "peter-metal-tee-red.png",
-            "secondary_image": "",
-            "sizes": [
-              {
-                "size": "S",
-                "stripe_price_id": "price_1LDEkVFphlPzH0mssWysSoAO"
-              },
-              {
-                "size": "M",
-                "stripe_price_id": "price_1LDwGLFphlPzH0msYGKOcnWd"
-              },
-              {
-                "size": "L",
-                "stripe_price_id": "price_1LDwGfFphlPzH0msFNKvgi24"
-              },
-              {
-                "size": "XL",
-                "stripe_price_id": "price_1LDwGwFphlPzH0msCu4XuPSn"
-              },
-              {
-                "size": "XXL",
-                "stripe_price_id": "price_1LDwHCFphlPzH0msC4OZlXse"
-              }
-            ]
-          }
-        ],
-        "image": "peter-metal-tee-white.png",
         "price": 19.99
       },
       {
@@ -243,23 +179,23 @@
             "sizes": [
               {
                 "size": "S",
-                "stripe_price_id": "price_1LDEUtFphlPzH0ms72kpwkq1"
+                "stripe_price_id": "price_1LJ0CpFphlPzH0msUGD2JOJ1"
               },
               {
                 "size": "M",
-                "stripe_price_id": "price_1LDwBiFphlPzH0ms5mPFc5nz"
+                "stripe_price_id": "price_1LJ0CvFphlPzH0ms9ZJuFVwR"
               },
               {
                 "size": "L",
-                "stripe_price_id": "price_1LDwBzFphlPzH0msVxRe2jLS"
+                "stripe_price_id": "price_1LJ0D0FphlPzH0msEqKhO37z"
               },
               {
                 "size": "XL",
-                "stripe_price_id": "price_1LDwCHFphlPzH0msA6UYGUGj"
+                "stripe_price_id": "price_1LJ0D5FphlPzH0msXkqNjZsz"
               },
               {
                 "size": "XXL",
-                "stripe_price_id": "price_1LDwCYFphlPzH0msM7dg0H24"
+                "stripe_price_id": "price_1LJ0D9FphlPzH0msslyVLYKG"
               }
             ]
           }
@@ -286,23 +222,23 @@
             "sizes": [
               {
                 "size": "S",
-                "stripe_price_id": "price_1LDEUQFphlPzH0ms8NYGTD0e"
+                "stripe_price_id": "price_1LJ0DMFphlPzH0msemkkDceB"
               },
               {
                 "size": "M",
-                "stripe_price_id": "price_1LDwDEFphlPzH0msOzWnfZzc"
+                "stripe_price_id": "price_1LJ0DRFphlPzH0mskRR8b0ub"
               },
               {
                 "size": "L",
-                "stripe_price_id": "price_1LDwDSFphlPzH0mssVQ3Um4K"
+                "stripe_price_id": "price_1LJ0DWFphlPzH0msmmCdcSSZ"
               },
               {
                 "size": "XL",
-                "stripe_price_id": "price_1LDwDmFphlPzH0ms0Yj6cCUF"
+                "stripe_price_id": "price_1LJ0DjFphlPzH0msMA5poWEy"
               },
               {
                 "size": "XXL",
-                "stripe_price_id": "price_1LDwE2FphlPzH0msU5QlsDOA"
+                "stripe_price_id": "price_1LJ0DoFphlPzH0msrOmfRrqW"
               }
             ]
           }

@@ -1,5 +1,10 @@
-import Collections from '../content/collections.json';
 import { CartCookieItem, Cart, CartProduct } from './types';
+import testCollections from '../content/test-collections.json';
+import prodCollections from '../content/prod-collections.json';
+
+const env = process.env.NODE_ENV;
+
+const Collections = env == 'development' ? testCollections : prodCollections;
 
 export function buildCartFromCookie(cartCookie: CartCookieItem[]) {
   const products: CartProduct[] = [];

@@ -25,7 +25,7 @@ const STRIPE_SECRET_KEY =
 const STRIPE_ENDPOINT_SECRET =
   env == 'development'
     ? process.env.STRIPE_ENDPOINT_TEST_SECRET!
-    : process.env.STRIPE_ENDPOINT_TEST_SECRET!;
+    : process.env.STRIPE_ENDPOINT_SECRET!;
 
 export default async function handler(
   req: NextApiRequest,

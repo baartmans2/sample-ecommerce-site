@@ -15,7 +15,11 @@ const Success: NextPage = () => {
       </Head>
       <div className={styles.textContainer}>
         <h1>Order placed.</h1>
-        <p>You will receive a confirmation email shortly.</p>
+        <p>
+          You should receive a confirmation email shortly. If you do not receive
+          a confirmation email within 10 minutes, please contact
+          mail@zeromoneyteam.com.
+        </p>
       </div>
     </div>
   );

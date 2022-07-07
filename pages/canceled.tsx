@@ -11,6 +11,11 @@ const Success: NextPage = () => {
       </Head>
       <div className={styles.textContainer}>
         <h1>Order canceled.</h1>
+        <p>
+          The checkout session was aborted, and your order has been canceled. If
+          you believe there was a mistake, please contact
+          mail@zeromoneyteam.com.
+        </p>
         <Link href='/'>Return to shopping.</Link>
       </div>
     </div>

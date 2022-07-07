@@ -11,8 +11,8 @@ const Contact: NextPage = () => {
       <div className={styles.textContainer}>
         <h1>Contact</h1>
         <p>
-          Email ZeroMoneyTeam@protonmail.com with any questions, requests, or
-          issues with your order/purchase. Please include a subject line.
+          Email mail@zeromoneyteam.com with any questions, requests, or issues
+          with your order/purchase. Please include a subject line.
         </p>
       </div>
     </div>

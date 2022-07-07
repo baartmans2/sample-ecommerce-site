@@ -1,0 +1,64 @@
+{
+  "id": 2,
+  "product_name": "Peter Metal Tee",
+  "variants": [
+    {
+      "variant_id": 1,
+      "name": "White",
+      "image": "peter-metal-tee-white.png",
+      "secondary_image": "",
+      "sizes": [
+        {
+          "size": "S",
+          "stripe_price_id": "price_1LDEk6FphlPzH0msBWtgfG5L"
+        },
+        {
+          "size": "M",
+          "stripe_price_id": "price_1LDwEkFphlPzH0msVK6jhx67"
+        },
+        {
+          "size": "L",
+          "stripe_price_id": "price_1LDwEzFphlPzH0msQ6aiXDHC"
+        },
+        {
+          "size": "XL",
+          "stripe_price_id": "price_1LDwFIFphlPzH0msRW3FVCLv"
+        },
+        {
+          "size": "XXL",
+          "stripe_price_id": "price_1LDwFjFphlPzH0msN39gZNAe"
+        }
+      ]
+    },
+    {
+      "variant_id": 2,
+      "name": "Red",
+      "image": "peter-metal-tee-red.png",
+      "secondary_image": "",
+      "sizes": [
+        {
+          "size": "S",
+          "stripe_price_id": "price_1LDEkVFphlPzH0mssWysSoAO"
+        },
+        {
+          "size": "M",
+          "stripe_price_id": "price_1LDwGLFphlPzH0msYGKOcnWd"
+        },
+        {
+          "size": "L",
+          "stripe_price_id": "price_1LDwGfFphlPzH0msFNKvgi24"
+        },
+        {
+          "size": "XL",
+          "stripe_price_id": "price_1LDwGwFphlPzH0msCu4XuPSn"
+        },
+        {
+          "size": "XXL",
+          "stripe_price_id": "price_1LDwHCFphlPzH0msC4OZlXse"
+        }
+      ]
+    }
+  ],
+  "image": "peter-metal-tee-white.png",
+  "price": 19.99
+}
