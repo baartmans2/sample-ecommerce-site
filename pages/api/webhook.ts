@@ -93,6 +93,8 @@ export default async function handler(
             },
           };
 
+          console.log('Creating New Order: ' + JSON.stringify(order));
+
           const orderRes = await fetch('https://api.printful.com/orders', {
             headers: {
               'Content-Type': 'application/json',
@@ -110,7 +112,9 @@ export default async function handler(
           switch (printfulOrderRes.code) {
             case 200: {
               //order created successfully
-
+              console.log(
+                'Order Successfully Created. Confirming for fufillment...'
+              );
               //confirm order for fufillment
               const orderFufill = await fetch(
                 `https://api.printful.com/orders/${printfulOrderRes.result.id}/confirm`,
@@ -128,10 +132,10 @@ export default async function handler(
               const orderFufillRes = await orderFufill.json();
               switch (orderFufillRes.code) {
                 case 200: {
-                  console.log(orderFufillRes);
                   //send a mail to user that order has been successfully processed
                   //send mail to user
-                  console.log('order confirmed for fufillment.');
+                  console.log('Order confirmed for fufillment:');
+                  console.log(orderFufillRes);
                   /* await sendMail(
                     recipient.email,
                     'Your Order Has Been Processed',
@@ -141,7 +145,10 @@ export default async function handler(
                 }
                 default: {
                   //order not confirmed
-                  console.log('Error confirming order.');
+                  console.log(
+                    'Error confirming order: ' + JSON.stringify(orderFufillRes)
+                  );
+                  console.log('Refunding Payment...');
                   //refund order
                   const refund = await stripe.refunds.create({
                     payment_intent: session.payment_intent,
@@ -166,7 +173,10 @@ export default async function handler(
             }
             default: {
               //order not created successfully
-              console.log('Error creating order.');
+              console.log(
+                'Error creating order: ' + JSON.stringify(printfulOrderRes)
+              );
+              console.log('Refunding Payment...');
               //refund order
               const refund = await stripe.refunds.create({
                 payment_intent: session.payment_intent,
@@ -184,7 +194,8 @@ export default async function handler(
           break;
         }
         default: {
-          res.status(200).json('Event Received.');
+          res.status(200).json('Webhook Event Received.');
+          break;
         }
       }
     } catch (err: any) {

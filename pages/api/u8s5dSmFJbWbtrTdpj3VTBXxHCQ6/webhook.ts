@@ -19,7 +19,7 @@ export default async function handler(
       console.log('Printful Event Received: ' + JSON.stringify(event));
       switch (event.type) {
         case 'order_created': {
-          console.log('created');
+          console.log('Printful Webhook: Order Has Been Created');
           await sendMail(
             event.data.order.recipient.email,
             'Your Order Has Been Placed',
@@ -28,7 +28,7 @@ export default async function handler(
           break;
         }
         case 'package_shipped': {
-          console.log('shipped');
+          console.log('Printful Webhook: Order Has Been Shipped');
           await sendMail(
             event.data.order.recipient.email,
             'Your Order Has Been Shipped',
@@ -37,7 +37,8 @@ export default async function handler(
           break;
         }
         case 'order_failed': {
-          console.log('failed');
+          console.log('Printful Webhook: Order Confirmation failed.');
+          console.log('Refunding Payment...');
           //refund
           const stripe = new Stripe(STRIPE_SECRET_KEY, {
             apiVersion: '2020-08-27',
@@ -58,19 +59,19 @@ export default async function handler(
               'There was an unexpected error processing your order. Your order has been canceled and a refund has been issued. Please contact mail@zeromoneyteam.com if you have any further issues.'
             );
           } catch (err: any) {
-            console.log(err.message);
+            console.log('Refund failed: ' + err.message);
             await sendMail(
               event.data.order.recipient.email,
               'Error Processing Your Order',
-              'There was an unexpected error processing your order, and we were unable to automatically issue a refund. Please contact mail@zeromoneyteam.com and include your order ID from your initial confirmation email.'
+              'There was an unexpected error processing your order, and we were unable to automatically issue a refund. Please contact mail@zeromoneyteam.com and include your order ID from your initial confirmation email and we will work to resolve the issue as quickly as possible.'
             );
           }
 
           break;
         }
         case 'order_canceled': {
-          console.log('canceled');
-
+          console.log('Printful Webhook: Order Confirmation failed.');
+          console.log('Refunding Payment...');
           try {
             const stripe = new Stripe(STRIPE_SECRET_KEY, {
               apiVersion: '2020-08-27',
@@ -90,11 +91,11 @@ export default async function handler(
               'Your order has been canceled and a refund has been issued. Please contact mail@zeromoneyteam.com if you have any further issues.'
             );
           } catch (err: any) {
-            console.log(err.message);
+            console.log('Refund failed: ' + err.message);
             await sendMail(
               event.data.order.recipient.email,
               'Error Cancelling your Order',
-              'There was an unexpected error when cancelling your order, and we were unable to automatically issue a refund. Please contact mail@zeromoneyteam.com and include your order ID from your initial confirmation email.'
+              'There was an unexpected error when cancelling your order, and we were unable to automatically issue a refund. Please contact mail@zeromoneyteam.com and include your order ID from your initial confirmation email and we will work to resolve the issue as quickly as possible.'
             );
           }
           break;
