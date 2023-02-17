@@ -1,8 +1,8 @@
 ## Overview
 
-Shop website utilizing Stripe Checkout and Printful API to place and fufill orders.
+This is an example small ecommerce website utilizing Stripe Checkout and Printful API to place and fufill orders.
 
-Built using NextJS, Typescript, and Material-UI for some form components.
+Built using NextJS (React), Typescript, and Material-UI for some form components.
 
 ## Structure
 
